@@ -4,6 +4,7 @@ from django.urls import reverse, resolve
 
 from .views import HomePageView
 
+
 class HomepageTests(SimpleTestCase):
     def setUp(self) -> None:
         url = reverse('home')
