@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     # Third-party
     "crispy_forms",
     "crispy_bootstrap5",
+    "allauth",
+    "allauth.account",
     # local
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
@@ -132,4 +134,18 @@ LOGOUT_REDIRECT_URL = "home"
 
 # django-crispy-forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5" # new
+CRISPY_TEMPLATE_PACK = "bootstrap5"  # new
+# django-allauth config
+ACCOUNT_LOGOUT_REDIRECT = "home" # new
+SITE_ID = 1  # new
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# Disable checkbox Remember Me []
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_USERNAME_REQUIRED = False # new
+ACCOUNT_AUTHENTICATION_METHOD = "email" # new
+ACCOUNT_EMAIL_REQUIRED = True # new
+ACCOUNT_UNIQUE_EMAIL = True # new
