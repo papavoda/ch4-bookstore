@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     # local
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
+    'allauth.socialaccount', # new
+    'allauth.socialaccount.providers.github', # new
 ]
 
 MIDDLEWARE = [
@@ -149,3 +151,4 @@ ACCOUNT_USERNAME_REQUIRED = False # new
 ACCOUNT_AUTHENTICATION_METHOD = "email" # new
 ACCOUNT_EMAIL_REQUIRED = True # new
 ACCOUNT_UNIQUE_EMAIL = True # new
+ACCOUNT_EMAIL_VERIFICATION = 'none'
