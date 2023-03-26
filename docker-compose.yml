@@ -10,12 +10,11 @@ services:
       - 8000:8000
     depends_on:
       - db
-    environment:
+#    environment:
 #      Note that if your SECRET_KEY includes a dollar sign, $, then you need to add an additional
 #      dollar sign, $$. This is due to how docker-compose handles variable substitutiona. Otherwise
 #      you will see an error!
-      - "DJANGO_SECRET_KEY=django-insecure-3gh@kxy7($$8b#%50hoiva=a-bd+jh+%k_(52)f_3a1@bg*8v99"
-      - "DJANGO_DEBUG=True"
+
   db:
     image: postgres:15
     volumes:
