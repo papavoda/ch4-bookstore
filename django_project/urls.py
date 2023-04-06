@@ -26,4 +26,5 @@ urlpatterns = [
     # bottom so this ensures that any built-in auth app URL paths will be loaded first.
     path("accounts/", include("allauth.urls")),
     path('', include('pages.urls')),
+    path('books/', include('books.urls')),
 ]
